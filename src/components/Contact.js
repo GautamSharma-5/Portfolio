@@ -28,7 +28,7 @@ export const Contact = () => {
     e.preventDefault();
     setButtonText("Sending...");
 
-    // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', 'YOUR_USER_ID' with your actual EmailJS credentials
+    // Replace '', 'YOUR_TEMPLATE_ID', '' with your actual EmailJS credentials
     const templateParams = {
       firstName: formDetails.firstName,
       lastName: formDetails.lastName,
@@ -38,7 +38,7 @@ export const Contact = () => {
     };
 
     try {
-      const response = await emailjs.send('service_oiwxd09', 'template_gpm8g6k', templateParams, '-HI10-arH0skPE-gZ');
+      const response = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_USER_ID', templateParams, 'Template-ID');
       console.log('Email sent successfully!', response.status, response.text);
       setStatus({ success: true, message: 'Message sent successfully!' });
     } catch (error) {
